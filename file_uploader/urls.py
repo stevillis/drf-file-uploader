@@ -18,8 +18,11 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 
+from api.views import FileUploaderView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', FileUploaderView.as_view())
 ]
 
 urlpatterns += static(
