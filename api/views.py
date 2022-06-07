@@ -15,3 +15,8 @@ class FileUploaderView(APIView):
         instance = DocumentVersion.objects.all()
         serializer = DocumentVersionSerializer(instance, many=True)
         return Response(serializer.data)
+
+    def post(self, request, format=None):
+        print(request.data)
+        print(request.FILES)
+        return Response('nice')
