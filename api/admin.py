@@ -1,3 +1,9 @@
 from django.contrib import admin
 
-# Register your models here.
+from api.models import DocumentVersion
+
+
+@admin.register(DocumentVersion)
+class DocumentVersionAdmin(admin.ModelAdmin):
+    fields = ['name', 'doc_file', ]
+    list_display = ['name', 'doc_file', ]
